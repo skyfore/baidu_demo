@@ -2,7 +2,7 @@
 
 'use strict';
 
-// import '../css/main.css';
+import '../css/main.css';
 
 import $ from 'jquery';
 import UI from './components/ui-manager.js';
