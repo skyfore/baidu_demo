@@ -15,8 +15,6 @@ function QRcode(container) {
 
   container.append(frame);
 
-  // console.log(this);
-
   Object.defineProperties(this, {
     frame: {
       enumerable: true,

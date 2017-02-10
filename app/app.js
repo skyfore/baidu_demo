@@ -1,5 +1,3 @@
-// search.js
-
 'use strict';
 
 import '../css/main.css';
@@ -14,14 +12,12 @@ $(document).ready(function() {
 
   function initUI() {
 
-    // UI.Test();
     setupMenu(body);
     setupMain(body);
     setupSidebar(body);
     setupFoot(body);
   }
   initUI();
-
 
   function setupMenu(container) {
     
@@ -125,14 +121,12 @@ $(document).ready(function() {
     sidebar.setupSidebar();
   }
 
-
   function setupMain(container) {
     
     var main = new UI.Main(container);
     main.show();
     main.enable();
   }
-
 
   function setupFoot(container) {
 
@@ -162,6 +156,5 @@ $(document).ready(function() {
 
     foot.show();
     foot.enable();
-    // console.log(foot);
   }
 });

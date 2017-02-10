@@ -1,5 +1,3 @@
-// base.js
-
 'use strict';
 
 import EventDispatcher from '../utils/event-dispatcher.js';
@@ -12,7 +10,7 @@ function Base() {
 
 Object.assign(Base.prototype, EventDispatcher.prototype, {
 
-  fadeIn: function () {
+  fadeIn() {
 
     if (this.frame) {
       this.frame.fadeIn.apply(this.frame, arguments);
@@ -20,7 +18,7 @@ Object.assign(Base.prototype, EventDispatcher.prototype, {
     }
   },
 
-  fadeOut: function () {
+  fadeOut() {
 
     if (this.frame) {
       this.frame.fadeOut.apply(this.frame, arguments);
@@ -28,7 +26,7 @@ Object.assign(Base.prototype, EventDispatcher.prototype, {
     }
   },
 
-  show: function () {
+  show() {
 
     if (this.frame) {
       this.frame.show();
@@ -36,7 +34,7 @@ Object.assign(Base.prototype, EventDispatcher.prototype, {
     }
   },
 
-  hide: function () {
+  hide() {
 
     if (this.frame) {
       this.frame.hide();
@@ -44,16 +42,15 @@ Object.assign(Base.prototype, EventDispatcher.prototype, {
     }
   },
 
-  enable: function () {
+  enable() {
 
     this.enabled = true;
   },
 
-  disable: function () {
+  disable() {
 
     this.enabled = false;
   }
 })
-
 
 export default Base;

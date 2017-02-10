@@ -1,4 +1,3 @@
-// QRcodeItem.js
 'use strict';
 
 import Base from './base.js';

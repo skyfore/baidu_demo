@@ -1,31 +1,3 @@
-// menu.js
-
-// 'use strict';
-
-// import MenuItem from './menu-item.js';
-// import SideBar from './sidebar.js';
-// import Utils from '../utils/utils.js';
-
-// function Menu(container) {
-
-//   var ns = 'menu-';
-
-//   var div = Utils.node('<div></div>');
-//   div.addClass(ns + 'container');
-
-//   var menuItem = new MenuItem(div);
-//   var sideBar = new SideBar(container);
-
-//   container.append(div);
-
-
-
-
-// }
-
-// export default Menu;
-
-
 'use strict';
 
 import Base from './base.js';
@@ -42,9 +14,6 @@ function Menu(container) {
   frame.addClass(ns + '-frame');
 
   container.append(frame);
-  // this.setupItems();
-
-  // console.log(this);
 
   Object.defineProperties(this, {
     frame: {
@@ -62,7 +31,7 @@ function Menu(container) {
 
 Object.assign(Menu.prototype, Base.prototype, {
 
-  setupItems: function (datas) {
+  setupItems(datas) {
 
     function mouseEnter() {
       this.downShow();
@@ -91,16 +60,9 @@ Object.assign(Menu.prototype, Base.prototype, {
           menuItem.addEventListener('mouseenter', mouseEnter);
           menuItem.addEventListener('mouseleave', mouseLeave);
         }
-      })
+      });
     }
   }
 });
-
-
-// function TestClass (){}
-
-// TestClass.prototype.test1 = 'test1';
-
-
 
 export default Menu;

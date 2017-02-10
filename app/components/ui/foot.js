@@ -15,8 +15,7 @@ function Foot(container) {
   var frame = Utils.node('<div></div>');
   frame.addClass(ns + '-frame');
 
-  // console.log(this);
-  var qrcode = new QRcode(frame);//Error !!!
+  var qrcode = new QRcode(frame);
   var link = new Link(frame);
   var copyright = new Copyright(frame);
 
@@ -52,23 +51,21 @@ Object.assign(Foot.prototype, Base.prototype, {
   },
 
   setupLink(datas) {
-    // console.log(2333);
+    
     this.Link.setupLink(datas);
   }
 })
 
 function allStatusChange() {
   
-  // target.enable();
-  // target.show();
-  // console.log(arguments);
+  
   var list = Array.prototype.slice.call(arguments);
-  // console.log(list);
+  
   list.forEach(function (i) {
-    // console.log(i);
+   
     i.enable();
     i.show();
-  })
+  });
 }
 
 export default Foot;

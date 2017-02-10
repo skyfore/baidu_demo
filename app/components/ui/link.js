@@ -1,4 +1,4 @@
-// link.js
+'use strict';
 
 import Base from './base.js';
 import Utils from '../utils/utils.js';
@@ -32,8 +32,6 @@ Object.assign(Link.prototype, Base.prototype, {
 
   setupLink(datas) {
 
-    // console.log(1);
-    // console.log(datas);
     var self = this;
     if (!self.items) self.items = [];
 
@@ -54,10 +52,9 @@ Object.assign(Link.prototype, Base.prototype, {
           self.items.push(item);
         }
 
-      })
+      });
     }
   }
 })
-
 
 export default Link;

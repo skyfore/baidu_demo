@@ -56,10 +56,8 @@ Object.assign(SideBarItem.prototype, Base.prototype, {
       text.insertAfter(this.imgspan);
 
       this.imgspan.css('background', data.imgsrc);
-
     }
   }
 })
-
 
 export default SideBarItem;
