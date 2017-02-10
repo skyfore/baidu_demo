@@ -1,34 +1,80 @@
-// banner.js
+// // banner.js
+// 'use strict';
+
+// import Utils from '../utils/utils.js';
+
+// function Banner(container) {
+
+//   var ns = 'banner';
+
+//   var div = Utils.node('<div></div>');
+//   var banner = Utils.node('<img></img>');
+
+//   div.addClass(ns);
+//   banner.addClass(ns + '-img');
+
+//   banner.attr('src', 'https://www.baidu.com/img/bd_logo1.png');
+
+//   div.append(banner);
+//   container.append(div);
+
+//   banner = null;
+//   div = null;
+
+//   Object.defineProperties(this, {
+//     ns: {
+//       value: ns
+//     },
+//     div: {
+//       value: div
+//     }
+//   })
+// }
+
+// export default Banner;
+
 'use strict';
 
+import Base from './base.js';
 import Utils from '../utils/utils.js';
 
 function Banner(container) {
-	
-	var sn = 'banner';
+  
+  var ns = 'banner';
 
-	var div = Utils.node('<div></div>');
-	var banner = Utils.node('<img></img>');
+  var frame = Utils.node('<div></div>');
+  frame.addClass(ns + '-frame');
 
-	div.addClass(sn);
-	banner.addClass( sn + '-img');
+  var img = Utils.node('<img></img>');
+  img.addClass(ns + '-img');
 
-	banner.attr( 'src', 'https://www.baidu.com/img/bd_logo1.png');
+  frame.append(img);
 
-	div.append(banner);
-	container.append(div);
+  container.append(frame);
 
-	banner = null;
-	div = null;
+  this.hide();
+  this.disable();
 
-	Object.defineProperties(this, {
-		sn: {
-			value: sn
-		},
-		div: {
-			value: div
-		}
-	})
+  Object.defineProperties(this, {
+    frame: {
+      enumerable: true,
+      value: frame
+    },
+    ns: {
+      value: ns
+    },
+    img: {
+      value: img
+    }
+  })
 }
+
+Object.assign(Banner.prototype, Base.prototype, {
+
+  setImg(src){
+
+    this.img.attr('src', src);
+  }
+})
 
 export default Banner;

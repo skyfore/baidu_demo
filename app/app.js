@@ -2,30 +2,166 @@
 
 'use strict';
 
-import '../css/main.css';
+// import '../css/main.css';
 
 import $ from 'jquery';
 import UI from './components/ui-manager.js';
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-	// 初始化所有UI模块
-	var body = $('body');
-	// var height = window.innerHeight;
+  var body = $('body');
 
-	function initUI() {
-		
-		// UI.Menu(body);
-		// UI.Banner(body);
-		// UI.Search(body);
-		// 
-		var menu = new UI.Menu(body);
-		var main = new UI.Main(body);
-	}
-	initUI();
+  function initUI() {
 
-	// 调整高度
-	// $('.banner').css('padding-top', height / 2 - '300' + 'px');
-	
+    // UI.Test();
+    setupMenu(body);
+    setupMain(body);
+    setupSidebar(body);
+    setupFoot(body);
+  }
+  initUI();
+
+
+  function setupMenu(container) {
+    
+    var menu = new UI.Menu(container);
+    menu.show();
+    menu.enable();
+
+    menu.setupItems([{
+      text: '糯米',
+      src: '#'
+    },
+    {
+      text: '新闻',
+      src: '#'
+    },
+    {
+      text: 'hao123',
+      src: '#'
+    },
+    {
+      text: '地图',
+      src: '#'
+    },
+    {
+      text: '视频',
+      src: '#'
+    },
+    {
+      text: '贴吧',
+      src: '#'
+    },
+    {
+      text: '登录',
+      src: '#'
+    },
+    {
+      text: '设置',
+      src: '#',
+      down: [{
+        text: '搜索设置',
+        src: '#'
+      },
+      {
+        text: '高级搜索',
+        src: '#'
+      },
+      {
+        text: '关闭预测',
+        src: '#'
+      },
+      {
+        text: '搜索历史',
+        src: '#'
+      }]
+    },
+    {
+      text: '更多产品',
+      src: '#'
+    }])
+  }
+
+  function setupSidebar(container) {
+    
+    var src = 'url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/bdbri_icons_0a62ce1.png) no-repeat';
+
+    var sidebar = new UI.SideBar(container);
+    sidebar.show();
+    sidebar.enable();
+
+    sidebar.setupItems([{
+      text: '音乐',
+      src: '#',
+      imgsrc: src
+    },
+    {
+      text: '图片',
+      src: '#',
+      imgsrc: src
+    },
+    {
+      text: '知道',
+      src: '#',
+      imgsrc: src
+    },
+    {
+      text: '文库',
+      src: '#',
+      imgsrc: src
+    },
+    {
+      text: '风云榜',
+      src: '#',
+      imgsrc: src
+    },
+    {
+      text: '全部产品>>',
+      src: '#',
+      imgsrc: 'none'
+    }]);
+
+    sidebar.setupSidebar();
+  }
+
+
+  function setupMain(container) {
+    
+    var main = new UI.Main(container);
+    main.show();
+    main.enable();
+  }
+
+
+  function setupFoot(container) {
+
+    var foot = new UI.Foot(container);
+
+    foot.setupQRcode([{
+      text: '手机百度',
+      src: 'https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_efde696.png'
+    }]);
+
+    foot.setupLink([{
+      text: '把百度设为首页',
+      src: 'https://www.baidu.com/cache/sethelp/help.html'
+    },
+    {
+      text: '关于百度',
+      src: 'https://home.baidu.com'
+    },
+    {
+      text: 'About Baidu',
+      src: 'https://home.baidu.com'
+    },
+    {
+      text: '百度推广',
+      src: 'http://e.baidu.com/?refer=888'
+    }])
+
+    foot.show();
+    foot.enable();
+    // console.log(foot);
+  }
 });

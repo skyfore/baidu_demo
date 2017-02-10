@@ -4,8 +4,8 @@ import $ from 'jquery'
 
 export default {
 
-    node(str) {
-        return $(str);
-    }
+  node(str) {
+    return $(str);
+  }
 
 }

@@ -3,48 +3,47 @@ const webpack = require('webpack');
 const path = require('path');
 const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
-module.exports = function (env) {
-	
-	return {
+module.exports = function(env) {
+  return {
 
-		entry: './app/app.js',
+    entry: './app/app.js',
 
-		output: {
+    output: {
 
-			path: path.resolve( __dirname, 'dist'),
-			filename: '[name].js'
-		},
+      path: path.resolve(__dirname, 'dist'),
+      filename: '[name].js'
+    },
 
-		module: {
+    module: {
 
-			rules: [{
-				test: /\.css$/,
-				exclude: /node-modules/,
-				use: [ 'style-loader', 'css-loader' ]
-			},
-			// {
-			// 	test: /\.js$/,
-			// 	use: {
-			// 		loader: 'babel-loader',
-			// 		query: {
-			// 			cacheDirectory: true
-			// 		}
-			// 	},
-			// 	exclude: /node-modules/
-			// },
-			{
-			    test: /\.js$/,
-			    exclude: /(node_modules|bower_components)/,
-			    loader: 'babel-loader',
-			    query: {
-			        presets: ['es2015']
-			    }
-			  }
-			]
-		},
+      rules: [{
+          test: /\.css$/,
+          exclude: /node-modules/,
+          use: ['style-loader', 'css-loader']
+        },
+        // {
+        // 	test: /\.js$/,
+        // 	use: {
+        // 		loader: 'babel-loader',
+        // 		query: {
+        // 			cacheDirectory: true
+        // 		}
+        // 	},
+        // 	exclude: /node-modules/
+        // },
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel-loader',
+          query: {
+            presets: ['es2015']
+          }
+        }
+      ]
+    },
 
-		plugins: [
-			new webpack.optimize.UglifyJsPlugin()
-		]
-	}
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin()
+    ]
+  }
 }
