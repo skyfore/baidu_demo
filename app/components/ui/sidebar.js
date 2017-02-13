@@ -21,13 +21,40 @@ function SideBar(container) {
   frame.append(entry);
   container.append(frame);
 
-  entry.on('mouseenter', function () {
+  entry.on('mouseenter', function() {
+    if (self.items) {
+
+      self.items.forEach(function(item) {
+
+        item.show();
+        item.enable();
+      });
+      self.entry.addClass(self.ns + '_entry-hover');
+      self.frame.addClass(self.ns + '_hover');
+    }
+
+    var height = document.body.clientHeight;
+
+    self.frame.css('height', height - 1 + 'px');
+
     self.dispatchEvent({
       type: 'mouseenter'
     })
   });
-  
-  frame.on('mouseleave', function () {
+
+  frame.on('mouseleave', function() {
+    if (self.items) {
+
+      self.items.forEach(function(item) {
+
+        item.hide();
+        item.disable();
+      });
+
+      self.entry.removeClass(self.ns + '_entry-hover');
+      self.frame.removeClass(self.ns + '_hover');
+    }
+
     self.dispatchEvent({
       type: 'mouseleave'
     })
@@ -60,53 +87,53 @@ Object.assign(SideBar.prototype, Base.prototype, {
 
     // if (Array.isArray(datas)) {
 
-      datas.forEach(function(data){
+    datas.forEach(function(data) {
 
-        let sidebarItem = new SideBarItem(self.frame);
-        sidebarItem.setItem(data);
+      let sidebarItem = new SideBarItem(self.frame);
+      sidebarItem.setItem(data);
 
-        self.items.push(sidebarItem);
-      });
+      self.items.push(sidebarItem);
+    });
     // }
   },
 
   setupSidebar() {
 
-    function mouseEnter() {
+    // function mouseEnter() {
 
-      if (this.items) {
+    //   if (this.items) {
 
-        this.items.forEach(function(item) {
+    //     this.items.forEach(function(item) {
 
-          item.show();
-          item.enable();
-        });
-        this.entry.addClass(this.ns + '_entry-hover');
-        this.frame.addClass(this.ns + '_hover');
-      }
+    //       item.show();
+    //       item.enable();
+    //     });
+    //     this.entry.addClass(this.ns + '_entry-hover');
+    //     this.frame.addClass(this.ns + '_hover');
+    //   }
 
-      var height = document.body.clientHeight;
+    //   var height = document.body.clientHeight;
 
-      this.frame.css('height', height - 1 + 'px');
-    }
+    //   this.frame.css('height', height - 1 + 'px');
+    // }
 
-    function mouseLeave() {
+    // function mouseLeave() {
 
-      if (this.items) {
+    //   if (this.items) {
 
-        this.items.forEach(function (item) {
-          
-          item.hide();
-          item.disable();
-        });
+    //     this.items.forEach(function (item) {
 
-        this.entry.removeClass(this.ns + '_entry-hover');
-        this.frame.removeClass(this.ns + '_hover');
-      }
-    }
+    //       item.hide();
+    //       item.disable();
+    //     });
 
-    this.addEventListener('mouseenter', mouseEnter);
-    this.addEventListener('mouseleave', mouseLeave);
+    //     this.entry.removeClass(this.ns + '_entry-hover');
+    //     this.frame.removeClass(this.ns + '_hover');
+    //   }
+    // }
+
+    // this.addEventListener('mouseenter', mouseEnter);
+    // this.addEventListener('mouseleave', mouseLeave);
   }
 })
 

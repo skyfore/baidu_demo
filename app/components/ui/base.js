@@ -3,7 +3,7 @@
 import EventDispatcher from '../utils/event-dispatcher.js';
 
 function Base() {
-  
+
   this.enabled = false;
   this.visible = false;
 }

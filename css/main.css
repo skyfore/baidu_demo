@@ -476,6 +476,11 @@ p{
     /*height: 60px;*/
     position: relative;
 }
+.qrcode-item_frame{
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 .qrcode-item_img {
     width: 60px;
@@ -485,7 +490,7 @@ p{
 .qrcode-item_text {
     color: #666;
     line-height: 23px;
-    margin: 3px 0 0 5px;
+    margin: 3px 0 0 0px;
     font-weight: 700;
 }
 

@@ -45,17 +45,17 @@ function SideBarItem(container) {
 Object.assign(SideBarItem.prototype, Base.prototype, {
 
   setItem(data) {
-    
+
     // if (data instanceof Object) {
 
-      var text = document.createTextNode(data.text);
-      text = Utils.node(text);
+    var text = document.createTextNode(data.text);
+    text = Utils.node(text);
 
-      this.a.attr('href', data.src);
+    this.a.attr('href', data.src);
 
-      text.insertAfter(this.imgspan);
+    text.insertAfter(this.imgspan);
 
-      this.imgspan.css('background', data.imgsrc);
+    this.imgspan.css('background', data.imgsrc);
     // }
   }
 })

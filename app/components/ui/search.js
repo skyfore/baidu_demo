@@ -33,40 +33,56 @@ function Search(container) {
 
   form.append(span, btn);
 
-  frame.append(form); 
+  frame.append(form);
 
   this.hide();
   this.disable();
 
   container.append(frame);
 
-  input.on('mouseenter', function(){
+  function mouseenter() {
 
+    self.span.addClass(self.ns + '_hover');
     self.dispatchEvent({
       type: 'mouseenter'
-    })
-  });
+    });
+  }
 
-  input.on('mouseleave', function () {
-    
+  function mouseleave() {
+
+    self.span.removeClass(self.ns + '_hover');
     self.dispatchEvent({
       type: 'mouseleave'
-    })
-  });
+    });
+  }
 
-  input.on('click', function () {
-    
+  function active() {
+
+    self.span.addClass(self.ns + '_focus');
     self.dispatchEvent({
       type: 'click'
-    })
-  });
+    });
+    Utils.node(this).off('mouseenter', mouseenter);
+    Utils.node(this).off('mouseleave', mouseleave);
+  }
 
-  input.on('blur', function () {
-    
+  function inactive() {
+
+    self.span.removeClass(self.ns + '_focus');
     self.dispatchEvent({
       type: 'blur'
-    })
-  });
+    });
+    Utils.node(this).on('mouseenter', mouseenter);
+    Utils.node(this).on('mouseleave', mouseleave);
+  }
+
+  input.on('mouseenter', mouseenter);
+
+  input.on('mouseleave', mouseleave);
+
+  input.on('click', active);
+
+  input.on('blur', inactive);
 
   Object.defineProperties(this, {
     frame: {
@@ -93,25 +109,25 @@ function Search(container) {
 
 Object.assign(Search.prototype, Base.prototype, {
 
-  mouseenter() {
+  // mouseenter() {
 
-    this.span.addClass(this.ns + '_hover');
-  },
+  //   this.span.addClass(this.ns + '_hover');
+  // },
 
-  mouseleave() {
+  // mouseleave() {
 
-    this.span.removeClass(this.ns + '_hover');
-  },
+  //   this.span.removeClass(this.ns + '_hover');
+  // },
 
-  active() {
+  // active() {
 
-    this.span.addClass(this.ns + '_focus');
-  },
+  //   this.span.addClass(this.ns + '_focus');
+  // },
 
-  inactive() {
+  // inactive() {
 
-    this.span.removeClass(this.ns + '_focus')
-  }
+  //   this.span.removeClass(this.ns + '_focus')
+  // }
 
 })
 

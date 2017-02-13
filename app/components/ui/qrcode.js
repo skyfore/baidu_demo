@@ -39,8 +39,8 @@ Object.assign(QRcode.prototype, Base.prototype, {
 
     // if (Array.isArray(datas)) {
 
-      datas.forEach(function (data) {
-        
+    datas.forEach(function(data) {
+
         let qrcodeItem = new QRcodeItem(self.frame);
 
         qrcodeItem.setQRcodeItem(data);
@@ -50,7 +50,7 @@ Object.assign(QRcode.prototype, Base.prototype, {
 
         self.items.push(qrcodeItem);
       })
-    // }
+      // }
   }
 })
 

@@ -11,14 +11,14 @@ $(document).ready(function() {
 
   function initUI() {
 
-    setupMenu(body);
-    setupMain(body);
-    setupSidebar(body);
-    setupFoot(body);
+    window.menu = initMenu(body);
+    window.main = initMain(body);
+    window.sidebar = initSidebar(body);
+    window.foot = initFoot(body);
   }
   initUI();
 
-  function setupMenu(container) {
+  function initMenu(container) {
 
     var menu = new UI.Menu(container);
     menu.show();
@@ -75,10 +75,12 @@ $(document).ready(function() {
     {
       text: '更多产品',
       src: '#'
-    }])
+    }]);
+
+    return menu;
   }
 
-  function setupSidebar(container) {
+  function initSidebar(container) {
 
     var src = 'url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/bdbri_icons_0a62ce1.png) no-repeat';
 
@@ -117,17 +119,20 @@ $(document).ready(function() {
       imgsrc: 'none'
     }]);
 
-    sidebar.setupSidebar();
+    return sidebar;
+    // sidebar.setupSidebar();
   }
 
-  function setupMain(container) {
+  function initMain(container) {
 
     var main = new UI.Main(container);
     main.show();
     main.enable();
+
+    return main;
   }
 
-  function setupFoot(container) {
+  function initFoot(container) {
 
     var foot = new UI.Foot(container);
 
@@ -155,5 +160,7 @@ $(document).ready(function() {
 
     foot.show();
     foot.enable();
+
+    return foot;
   }
 });

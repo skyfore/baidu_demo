@@ -17,30 +17,35 @@ function MenuItem(container) {
   var item = Utils.node('<a></a>');
   item.addClass(ns + '_a');
 
-  var down = Utils.node('<div></div>');
-  down.addClass(ns + '_down');
+  // var down = Utils.node('<div></div>');
+  // down.addClass(ns + '_down');
 
-  var nuarrow = Utils.node('<div><em></em><i></i></div>');
-  nuarrow.addClass('nuarrow');
+  // var nuarrow = Utils.node('<div><em></em><i></i></div>');
+  // nuarrow.addClass('nuarrow');
 
-  down.append(nuarrow);
+  // down.append(nuarrow);
 
-  down.hide()//调用jQuery的原生函数
-
-  frame.append(item, down);
+  frame.append(item);
 
   container.append(frame);
 
-  frame.on('mouseenter', function () {
+  frame.on('mouseenter', function() {
+    if (self.down) {
+      self.down.fadeIn(300);
+      // console.log(self.down);
+    }
     self.dispatchEvent({
       type: 'mouseenter'
-    })  
+    });
   });
 
-  frame.on('mouseleave', function(){
+  frame.on('mouseleave', function() {
+    if (self.down) {
+      self.down.fadeOut(300);
+    }
     self.dispatchEvent({
       type: 'mouseleave'
-    })
+    });
   });
 
   Object.defineProperties(this, {
@@ -53,10 +58,10 @@ function MenuItem(container) {
     },
     item: {
       value: item
-    },
-    down: {
-      value: down
     }
+    // down: {
+    //   value: down
+    // }
   });
 
   this.hide();
@@ -69,11 +74,11 @@ Object.assign(MenuItem.prototype, Base.prototype, {
 
     // if (data instanceof Object) {
 
-      this.item.html(data.text);
-      this.item.attr('href', data.src);
+    this.item.html(data.text);
+    this.item.attr('href', data.src);
 
-      // this.show();
-      // this.enable();
+    // this.show();
+    // this.enable();
     // }
   },
 
@@ -81,10 +86,28 @@ Object.assign(MenuItem.prototype, Base.prototype, {
 
     var self = this;
 
+    if (!self.down) {
+
+      var down = Utils.node('<div></div>');
+      down.addClass(self.ns + '_down');
+
+      down.hide() //调用jQuery的原生函数
+
+      self.frame.append(down);
+
+      self.down = down;
+    }
+
+
+    var nuarrow = Utils.node('<div><em></em><i></i></div>');
+    nuarrow.addClass('nuarrow');
+
+    self.down.append(nuarrow);
+
     if (Array.isArray(datas)) {
 
-      datas.forEach(function (data) {
-        
+      datas.forEach(function(data) {
+
         let a = Utils.node('<a></a>');
         a.addClass(self.ns + '_down-item');
 
@@ -92,7 +115,7 @@ Object.assign(MenuItem.prototype, Base.prototype, {
         a.attr('href', data.src);
 
         self.down.append(a);
-        
+
         self.show();
         self.enable();
       });
@@ -101,12 +124,12 @@ Object.assign(MenuItem.prototype, Base.prototype, {
 
   downShow() {
 
-    this.down.show();
+    // this.down.show();
   },
 
   downHide() {
 
-    this.down.hide();
+    // this.down.hide();
   }
 })
 

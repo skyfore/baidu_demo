@@ -61,8 +61,8 @@ Object.assign(Menu.prototype, Base.prototype, {
         if (data.down) {
 
           menuItem.setDown(data.down);
-          menuItem.addEventListener('mouseenter', mouseEnter);
-          menuItem.addEventListener('mouseleave', mouseLeave);
+          // menuItem.addEventListener('mouseenter', mouseEnter);
+          // menuItem.addEventListener('mouseleave', mouseLeave);
         }
       });
     // }

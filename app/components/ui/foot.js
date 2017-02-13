@@ -51,7 +51,7 @@ Object.assign(Foot.prototype, Base.prototype, {
   },
 
   setupLink(datas) {
-    
+
     this.Link.setLink(datas);
   }
 })
@@ -59,9 +59,9 @@ Object.assign(Foot.prototype, Base.prototype, {
 function allStatusChange() {
 
   var list = Array.prototype.slice.call(arguments);
-  
-  list.forEach(function (i) {
-   
+
+  list.forEach(function(i) {
+
     i.enable();
     i.show();
   });

@@ -20,7 +20,7 @@ function Main(container) {
   var banner = new Banner(frame);
   var search = new Search(frame);
 
-  this.setupSearch(search);
+  // this.setupSearch(search);
 
   search.enable();
   search.show();
@@ -51,36 +51,36 @@ function Main(container) {
 
 Object.assign(Main.prototype, Base.prototype, {
 
-  setupSearch(search) {
+  // setupSearch(search) {
 
-    function clickInclude() {
+  //   function clickInclude() {
       
-      this.active();
-      this.removeEventListener('mouseenter', mouseEnterInclude);
-      this.removeEventListener('mouseleave', mouseLeaveInclude);
-    }
+  //     this.active();
+  //     this.removeEventListener('mouseenter', mouseEnterInclude);
+  //     this.removeEventListener('mouseleave', mouseLeaveInclude);
+  //   }
 
-    function mouseEnterInclude() {
+  //   function mouseEnterInclude() {
       
-      this.mouseenter();
-    }
+  //     this.mouseenter();
+  //   }
 
-    function mouseLeaveInclude() {
+  //   function mouseLeaveInclude() {
       
-      this.mouseleave();
-    }
+  //     this.mouseleave();
+  //   }
 
-    function blurInclude() {
+  //   function blurInclude() {
       
-      this.inactive();
+  //     this.inactive();
 
-      this.addEventListener('mouseenter', mouseEnterInclude);
-      this.addEventListener('mouseleave', mouseLeaveInclude);
-    }
+  //     this.addEventListener('mouseenter', mouseEnterInclude);
+  //     this.addEventListener('mouseleave', mouseLeaveInclude);
+  //   }
 
-    search.addEventListener('click', clickInclude);
-    search.addEventListener('blur', blurInclude);
-  }
+  //   search.addEventListener('click', clickInclude);
+  //   search.addEventListener('blur', blurInclude);
+  // }
 })
 
 export default Main;
