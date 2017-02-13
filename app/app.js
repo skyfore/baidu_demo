@@ -5,7 +5,6 @@ import '../css/main.css';
 import $ from 'jquery';
 import UI from './components/ui-manager.js';
 
-
 $(document).ready(function() {
 
   var body = $('body');
@@ -20,7 +19,7 @@ $(document).ready(function() {
   initUI();
 
   function setupMenu(container) {
-    
+
     var menu = new UI.Menu(container);
     menu.show();
     menu.enable();
@@ -80,7 +79,7 @@ $(document).ready(function() {
   }
 
   function setupSidebar(container) {
-    
+
     var src = 'url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/bdbri_icons_0a62ce1.png) no-repeat';
 
     var sidebar = new UI.SideBar(container);
@@ -122,7 +121,7 @@ $(document).ready(function() {
   }
 
   function setupMain(container) {
-    
+
     var main = new UI.Main(container);
     main.show();
     main.enable();

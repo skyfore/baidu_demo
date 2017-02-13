@@ -4,7 +4,7 @@ import Utils from '../utils/utils.js';
 import Base from './base.js';
 
 function MenuItem(container) {
-  
+
   Base.call(this);
 
   var self = this;
@@ -12,13 +12,13 @@ function MenuItem(container) {
   var ns = 'menu-item';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var item = Utils.node('<a></a>');
-  item.addClass(ns + '-a');
+  item.addClass(ns + '_a');
 
   var down = Utils.node('<div></div>');
-  down.addClass(ns + '-down');
+  down.addClass(ns + '_down');
 
   var nuarrow = Utils.node('<div><em></em><i></i></div>');
   nuarrow.addClass('nuarrow');
@@ -67,14 +67,14 @@ Object.assign(MenuItem.prototype, Base.prototype, {
 
   setItem(data) {
 
-    if (data instanceof Object) {
+    // if (data instanceof Object) {
 
       this.item.html(data.text);
       this.item.attr('href', data.src);
 
-      this.show();
-      this.enable();
-    }
+      // this.show();
+      // this.enable();
+    // }
   },
 
   setDown(datas) {
@@ -86,7 +86,7 @@ Object.assign(MenuItem.prototype, Base.prototype, {
       datas.forEach(function (data) {
         
         let a = Utils.node('<a></a>');
-        a.addClass(self.ns + '-down-item');
+        a.addClass(self.ns + '_down-item');
 
         a.html(data.text);
         a.attr('href', data.src);

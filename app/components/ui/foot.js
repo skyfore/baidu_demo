@@ -7,13 +7,13 @@ import Copyright from './copyright.js';
 import Link from './link.js';
 
 function Foot(container) {
-  
+
   Base.call(this);
 
   var ns = 'foot';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var qrcode = new QRcode(frame);
   var link = new Link(frame);
@@ -52,13 +52,12 @@ Object.assign(Foot.prototype, Base.prototype, {
 
   setupLink(datas) {
     
-    this.Link.setupLink(datas);
+    this.Link.setLink(datas);
   }
 })
 
 function allStatusChange() {
-  
-  
+
   var list = Array.prototype.slice.call(arguments);
   
   list.forEach(function (i) {

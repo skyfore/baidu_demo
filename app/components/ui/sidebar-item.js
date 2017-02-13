@@ -4,19 +4,19 @@ import Base from './base.js';
 import Utils from '../utils/utils.js';
 
 function SideBarItem(container) {
-  
+
   Base.call(this);
 
   var ns = 'sidebar-item';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var a = Utils.node('<a></a>');
-  a.addClass(ns + '-a');
+  a.addClass(ns + '_a');
 
   var imgspan = Utils.node('<span></span>');
-  imgspan.addClass(ns + '-img');
+  imgspan.addClass(ns + '_img');
 
   a.append(imgspan);
   frame.append(a);
@@ -46,7 +46,7 @@ Object.assign(SideBarItem.prototype, Base.prototype, {
 
   setItem(data) {
     
-    if (data instanceof Object) {
+    // if (data instanceof Object) {
 
       var text = document.createTextNode(data.text);
       text = Utils.node(text);
@@ -56,7 +56,7 @@ Object.assign(SideBarItem.prototype, Base.prototype, {
       text.insertAfter(this.imgspan);
 
       this.imgspan.css('background', data.imgsrc);
-    }
+    // }
   }
 })
 

@@ -4,13 +4,13 @@ import Base from './base.js';
 import Utils from '../utils/utils.js';
 
 function Link(container) {
-  
+
   Base.call(this);
 
   var ns = 'link';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   container.append(frame);
 
@@ -30,30 +30,28 @@ function Link(container) {
 
 Object.assign(Link.prototype, Base.prototype, {
 
-  setupLink(datas) {
+  setLink(datas) {
 
     var self = this;
     if (!self.items) self.items = [];
 
-    if (Array.isArray(datas)) {
+    // if (Array.isArray(datas)) {
 
       datas.forEach(function(data) {
 
-        if (data instanceof Object) {
+        // if (data instanceof Object) {
 
           let item = Utils.node('<a></a>');
-          item.addClass(self.ns + '-text');
+          item.addClass(self.ns + '_text');
 
           item.html(data.text);
           item.attr('href', data.src);
 
           self.frame.append(item);
-          
           self.items.push(item);
-        }
-
+        // }
       });
-    }
+    // }
   }
 })
 

@@ -6,14 +6,14 @@ import Banner from './banner.js';
 import Search from './search.js';
 
 function Main(container) {
-  
+
   Base.call(this);
 
   var self = this;
   var ns = 'main';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   container.append(frame);
 

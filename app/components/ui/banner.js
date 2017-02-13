@@ -4,14 +4,14 @@ import Base from './base.js';
 import Utils from '../utils/utils.js';
 
 function Banner(container) {
-  
+
   var ns = 'banner';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var img = Utils.node('<img></img>');
-  img.addClass(ns + '-img');
+  img.addClass(ns + '_img');
 
   frame.append(img);
 

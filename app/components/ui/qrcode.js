@@ -11,7 +11,7 @@ function QRcode(container) {
   var ns = 'qrcode';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   container.append(frame);
 
@@ -37,7 +37,7 @@ Object.assign(QRcode.prototype, Base.prototype, {
 
     if (!self.items) self.items = [];
 
-    if (Array.isArray(datas)) {
+    // if (Array.isArray(datas)) {
 
       datas.forEach(function (data) {
         
@@ -45,9 +45,12 @@ Object.assign(QRcode.prototype, Base.prototype, {
 
         qrcodeItem.setQRcodeItem(data);
 
+        qrcodeItem.enable();
+        qrcodeItem.show();
+
         self.items.push(qrcodeItem);
       })
-    }
+    // }
   }
 })
 

@@ -5,7 +5,7 @@ import Utils from '../utils/utils.js';
 import SideBarItem from './sidebar-item.js';
 
 function SideBar(container) {
-  
+
   Base.call(this);
 
   var self = this;
@@ -13,10 +13,10 @@ function SideBar(container) {
   var ns = 'sidebar';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var entry = Utils.node('<div>更多产品</div>');
-  entry.addClass(ns + '-entry');
+  entry.addClass(ns + '_entry');
 
   frame.append(entry);
   container.append(frame);
@@ -58,7 +58,7 @@ Object.assign(SideBar.prototype, Base.prototype, {
 
     if (!self.items) self.items = [];
 
-    if (Array.isArray(datas)) {
+    // if (Array.isArray(datas)) {
 
       datas.forEach(function(data){
 
@@ -67,7 +67,7 @@ Object.assign(SideBar.prototype, Base.prototype, {
 
         self.items.push(sidebarItem);
       });
-    }
+    // }
   },
 
   setupSidebar() {
@@ -81,8 +81,8 @@ Object.assign(SideBar.prototype, Base.prototype, {
           item.show();
           item.enable();
         });
-        this.entry.addClass(this.ns + '-entry-hover');
-        this.frame.addClass(this.ns + '-hover');
+        this.entry.addClass(this.ns + '_entry-hover');
+        this.frame.addClass(this.ns + '_hover');
       }
 
       var height = document.body.clientHeight;
@@ -100,8 +100,8 @@ Object.assign(SideBar.prototype, Base.prototype, {
           item.disable();
         });
 
-        this.entry.removeClass(this.ns + '-entry-hover');
-        this.frame.removeClass(this.ns + '-hover');
+        this.entry.removeClass(this.ns + '_entry-hover');
+        this.frame.removeClass(this.ns + '_hover');
       }
     }
 

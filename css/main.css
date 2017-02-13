@@ -20,7 +20,7 @@ p{
     padding: 0 auto;
 }
 
-.menu-frame {
+.menu_frame {
     /*z-index: 2;
     color: #fff;
     position: absolute;
@@ -36,7 +36,7 @@ p{
     margin: 19px 0 5px;
     padding: 0 96px 0 0;
 }
-.menu-item-frame {
+.menu-item_frame {
     float: left;
 /*    color: #333;
     font-weight: 700;
@@ -48,7 +48,7 @@ p{
 }
 
 
-.menu-item-a {
+.menu-item_a {
 /*    float: left;
     color: #333;
     font-weight: 700;
@@ -63,20 +63,20 @@ p{
     text-decoration: underline;
 }
 
-.menu-item-a:hover {
+.menu-item_a:hover {
     color: #00c;
 }
 
 
-.menu-item-frame:nth-child(7) a{
+.menu-item_frame:nth-child(7) a{
 	font-weight: normal;
 }
 
-.menu-item-frame:nth-child(8) a{
+.menu-item_frame:nth-child(8) a{
 	font-weight: normal;
 }
 
-.menu-item-frame:last-child {
+.menu-item_frame:last-child {
     position: absolute;
     right: 10px;
     width: 60px;
@@ -95,7 +95,7 @@ p{
     font-weight: normal;
 }
 
-.menu-item-frame:last-child a {
+.menu-item_frame:last-child a {
     color: #fff;
     line-height: 24px;
     font-size: 13px;
@@ -103,7 +103,7 @@ p{
     font-weight: normal;
 }
 
-.menu-item-down {
+.menu-item_down {
     position: absolute;
     text-align: center;
     font-size: 12px;
@@ -157,7 +157,7 @@ p{
     top: 0;
 }
 
-.menu-item-down-item{
+.menu-item_down-item{
     display: inherit;
     /*display: block;*/
     /*text-align: left;*/
@@ -169,13 +169,13 @@ p{
     color: #333;
 }
 
-.menu-item-down-item:hover {
+.menu-item_down-item:hover {
     background: #38f;
     text-decoration: none;
     color: #fff;
 }
 
-.menu-sidebar-container {
+.menu_sidebar_container {
     display: block;
     text-align: center;
     width: 66px;
@@ -197,7 +197,7 @@ p{
     display: none;
 }
 
-.menu-sidebar-container a {
+.menu_sidebar_container a {
     display: block;
     text-align: center;
     width: 66px;
@@ -224,7 +224,7 @@ p{
 }*/
 
 
-.menu-sidebar-item {
+.menu_sidebar_item {
     width: 36px;
     height: 36px;
     display: block;
@@ -233,28 +233,28 @@ p{
     cursor: pointer;
 }
 
-.menu-sidebar-item:nth-child(1){
+.menu_sidebar_item:nth-child(1){
 	width: 40px;
     background-position: -72px 0;
 }
 
-.menu-sidebar-item:nth-child(2){
+.menu_sidebar_item:nth-child(2){
 	background-position: -112px 0;
 }
 
-.menu-sidebar-item:nth-child(3){
+.menu_sidebar_item:nth-child(3){
 	    background-position: -36px 0;
 }
 
-.menu-sidebar-item:nth-child(4){
+.menu_sidebar_item:nth-child(4){
 	background-position: -148px 0;
 }
 
-.menu-sidebar-item:nth-child(5){
+.menu_sidebar_item:nth-child(5){
 	background-position: -184px 0;
 }
 
-.sidebar-frame{
+.sidebar_frame{
     width: 85px;
     min-height: 100px;
     position: absolute;
@@ -265,7 +265,7 @@ p{
     text-align: center;
 }
 
-.sidebar-entry {
+.sidebar_entry {
     /*display: inline-block;*/
     /*position: absolute;*/
     right: 10px;
@@ -284,7 +284,7 @@ p{
     margin-top: 19px;
 }
 
-.sidebar-item-frame {
+.sidebar-item_frame {
     display: block;
     text-align: center;
     width: 66px;
@@ -296,12 +296,12 @@ p{
     overflow: hidden;
 }
 
-.sidebar-item-frame a{
+.sidebar-item_frame a{
     color: #666;
     text-decoration: none;
 }
 
-.sidebar-item-frame:last-child{
+.sidebar-item_frame:last-child{
     margin-top: 15px;
     height: 30px;
     width: 85px;
@@ -309,16 +309,16 @@ p{
     border: none;
 }
 
-.sidebar-item-frame a:hover{
+.sidebar-item_frame a:hover{
     text-decoration: underline;
 }
 
-.sidebar-item-frame:last-child .sidebar-item-img{
+.sidebar-item_frame:last-child .sidebar-item_img{
     display: none;
 }
 
 
-.sidebar-item-img {
+.sidebar-item_img {
     width: 36px;
     height: 36px;
     display: block;
@@ -327,12 +327,12 @@ p{
     cursor: pointer;
 }
 
-.sidebar-hover{
+.sidebar_hover{
     background-color: #f9f9f9;
     border-left: 1px solid #e7e7e7;
     height: 100vh;
 }
-.sidebar-entry-hover{
+.sidebar_entry-hover{
     color: #333;
     background: inherit;
     text-align: center;
@@ -348,26 +348,26 @@ p{
 
 
 
-.main-frame{
+.main_frame{
     position: absolute;
     top: 20vh;
     width: 100%;
 }
 
-.banner-frame{
+.banner_frame{
 	/*min-width: 650px;*/
 	text-align: center;
 	/*padding-bottom: 100px;*/
 }
 
-.banner-img{
+.banner_img{
 	width: 270px;
 	height: 129px;
 	border: 0;
 	padding-bottom: 30px;
 }
 
-.search-frame {
+.search_frame {
    /* margin: 0 auto;*/
     /*text-align: center;*/
    /* border: 1px solid #b6b6b6;
@@ -386,9 +386,7 @@ p{
     text-align: center;
 }
 
-
-
-.search-span {
+.search_span {
     position: relative;
     border: 1px solid #b6b6b6;
     border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
@@ -403,16 +401,16 @@ p{
     height: 34px;
 }
 
-.search-hover{
+.search_hover{
     border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
 }
 
-.search-focus{
+.search_focus{
     border-color: #4791ff transparent #4791ff #4791ff;
 }
 
 
-.search-soutu {
+.search_soutu {
     z-index: 1;
     position: absolute;
     right: 11px;
@@ -428,11 +426,11 @@ p{
     cursor: pointer;
 }
 
-.search-soutu:hover{
+.search_soutu:hover{
     background-position: 0 -20px;
 }
 
-.search-input {
+.search_input {
     width: 543px;
     border: none;
     height: 22px;
@@ -446,7 +444,7 @@ p{
     -webkit-appearance: none;
 }
 
-.search-btn {
+.search_btn {
     border: none;
     width: 100px;
     height: 36px;
@@ -460,38 +458,38 @@ p{
     -webkit-border-radius: 0;
 }
 
-.search-btn:hover{
+.search_btn:hover{
 	 background: #317ef3;
 	 border-bottom: 1px solid #2868c8;
 	 box-shadow: 1px 1px 1px #ccc
 }
 
-.foot-frame {
+.foot_frame {
     text-align: center;
     position: absolute;
     width: 100%;
     bottom: 47px;
 }
 
-.qrcode-frame{
+.qrcode_frame{
     bottom: 15px;
     /*height: 60px;*/
     position: relative;
 }
 
-.qrcode-item-img {
+.qrcode-item_img {
     width: 60px;
     height: 60px;
 }
 
-.qrcode-item-text {
+.qrcode-item_text {
     color: #666;
     line-height: 23px;
     margin: 3px 0 0 5px;
     font-weight: 700;
 }
 
-.link-frame a {
+.link_frame a {
     color: #999;
     display: inline-block;
     text-align: left;
@@ -530,11 +528,11 @@ p{
 }
 
 
-.copyright-frame {
+.copyright_frame {
     color: #999;
 }
 
-.copyright-frame a{
+.copyright_frame a{
     color: #999;
 }
 

@@ -5,13 +5,13 @@ import Utils from '../utils/utils.js';
 import MenuItem from './menu-item.js';
 
 function Menu(container) {
-  
+
   Base.call(this);
 
   var ns = 'menu';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   container.append(frame);
 
@@ -45,12 +45,16 @@ Object.assign(Menu.prototype, Base.prototype, {
 
     if (!self.items) self.items = [];
 
-    if (Array.isArray(datas)) {
+    // if (Array.isArray(datas)) {
 
       datas.forEach(function(data) {
 
         let menuItem = new MenuItem(self.frame);
         menuItem.setItem(data);
+
+        menuItem.show();
+        menuItem.enable();
+
 
         self.items.push(menuItem);
 
@@ -61,7 +65,7 @@ Object.assign(Menu.prototype, Base.prototype, {
           menuItem.addEventListener('mouseleave', mouseLeave);
         }
       });
-    }
+    // }
   }
 });
 

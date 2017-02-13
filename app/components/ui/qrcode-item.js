@@ -4,19 +4,19 @@ import Base from './base.js';
 import Utils from '../utils/utils.js';
 
 function QRcodeItem(container) {
-  
+
   Base.call(this);
 
   var ns = 'qrcode-item';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var img = Utils.node('<img></img>');
-  img.addClass(ns + '-img');
+  img.addClass(ns + '_img');
 
   var textdiv = Utils.node('<div></div>');
-  textdiv.addClass(ns + '-text');
+  textdiv.addClass(ns + '_text');
 
   var textp = Utils.node('<p></p>');
 
@@ -51,14 +51,11 @@ Object.assign(QRcodeItem.prototype, Base.prototype, {
 
   setQRcodeItem(data){
 
-    if (data instanceof Object) {
+    // if (data instanceof Object) {
 
       this.img.attr('src' ,data.src);
       this.text.html(data.text);
-      
-      this.enable();
-      this.show();
-    }
+    // }
   }
 })
 

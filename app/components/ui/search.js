@@ -11,23 +11,23 @@ function Search(container) {
   var ns = 'search';
 
   var frame = Utils.node('<div></div>');
-  frame.addClass(ns + '-frame');
+  frame.addClass(ns + '_frame');
 
   var form = Utils.node('<div></div>');
-  form.addClass(ns + '-form');
+  form.addClass(ns + '_form');
 
   var span = Utils.node('<div></div>');
-  span.addClass(ns + '-span');
-  span.addClass(ns + '-focus');
+  span.addClass(ns + '_span');
+  span.addClass(ns + '_focus');
 
   var input = Utils.node('<input autofocus="autofocus"></input>');
-  input.addClass(ns + '-input');
+  input.addClass(ns + '_input');
 
   var soutu = Utils.node('<span></span>');
-  soutu.addClass(ns + '-soutu');
+  soutu.addClass(ns + '_soutu');
 
   var btn = Utils.node('<button>百度一下</button>');
-  btn.addClass(ns + '-btn');
+  btn.addClass(ns + '_btn');
 
   span.append(input, soutu);
 
@@ -95,22 +95,22 @@ Object.assign(Search.prototype, Base.prototype, {
 
   mouseenter() {
 
-    this.span.addClass(this.ns + '-hover');
+    this.span.addClass(this.ns + '_hover');
   },
 
   mouseleave() {
 
-    this.span.removeClass(this.ns + '-hover');
+    this.span.removeClass(this.ns + '_hover');
   },
 
   active() {
 
-    this.span.addClass(this.ns + '-focus');
+    this.span.addClass(this.ns + '_focus');
   },
 
   inactive() {
 
-    this.span.removeClass(this.ns + '-focus')
+    this.span.removeClass(this.ns + '_focus')
   }
 
 })
